@@ -1,0 +1,25 @@
+﻿@using MyPlayGround.Models
+@model HandsontableModel
+
+@* 機能毎のスタイルファイルを記載 *@
+@section OriginalStyle
+{
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.34.4/handsontable.full.css">
+   
+    <style type="text/css">
+    </style>
+}
+@Html.HiddenFor(model => model.data)
+<h2>Handsontable Sample</h2>
+<section class="section--grey mdl-shadow--2dp contents">
+    <h4>読取専用handsontable</h4>
+    <div id="hot"></div>
+</section>
+
+    @* 機能毎のスクリプトファイルを記載 *@
+    @section OriginalScript
+{
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.34.4/handsontable.full.js"></script>
+        <script src="~/scripts/handsontable-util.js" type="text/javascript"></script>
+        <script src="~/scripts/handsontable-page.js" type="text/javascript"></script>
+    }

@@ -1,0 +1,10 @@
+﻿body {
+    min-height: initial;
+}
+
+.contents {
+    margin: 5px;
+    padding: 5px;
+    background-color: #fff;
+    overflow: auto;
+}

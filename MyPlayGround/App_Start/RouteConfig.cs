@@ -20,4 +20,18 @@ namespace MyPlayGround
             );
         }
     }
+
+    public class FeatureViewLocationRazorViewEngine : RazorViewEngine
+    {
+        private string[] featurePartialViewLocationFormats = new[]
+              {
+                "~/Views/Shared/{0}.cshtml"
+              };
+
+        public FeatureViewLocationRazorViewEngine()
+        {
+            // Partialファイルのパス設定
+            base.PartialViewLocationFormats = featurePartialViewLocationFormats;
+        }
+    }
 }
