@@ -12,22 +12,40 @@ firebase.initializeApp(config);
 firebase.database().ref("iot-hue").on('value', function (snapshot) {
     let dataList = snapshot.val();
     var dataListKeys = Object.keys(dataList);
-    let ul = document.getElementById("view-ul");
-    ul.innerHTML = "";
+
+    let table = document.getElementById("view-table");
+    let tdbody = table.getElementsByTagName("tbody")[0];
+
+    //let ul = document.getElementById("view-ul");
+    //ul.innerHTML = "";
 
     for (var i = 0, len = dataListKeys.length; i < len; i++) {
         let dataObj = dataList[dataListKeys[i]];
 
-        let li = document.createElement('li');
-        li.className = "mdl-list__item";
+        let tr = document.createElement('tr');
+        let tdKey = document.createElement('td');
+        tdKey.innerHTML = Object.keys(dataObj)[0];
+        tdKey.className = "mdl-data-table__cell--non-numeric";
+        tr.appendChild(tdKey);
 
-        let span = document.createElement('span');
-        span.className = "mdl-list__item-primary-content";
-        span.innerHTML = Object.keys(dataObj)[0] + " : " + dataObj[Object.keys(dataObj)[0]];
+        let tdValue = document.createElement('td');
+        tdValue.innerHTML = dataObj[Object.keys(dataObj)[0]];
+        tdValue.className = "mdl-data-table__cell--non-numeric";
+        tr.appendChild(tdValue);
 
-        li.appendChild(span);
+        tdbody.appendChild(tr);
 
-        ul.appendChild(li);
+        // リスト表示
+        //let li = document.createElement('li');
+        //li.className = "mdl-list__item";
+
+        //let span = document.createElement('span');
+        //span.className = "mdl-list__item-primary-content";
+        //span.innerHTML = Object.keys(dataObj)[0] + " : " + dataObj[Object.keys(dataObj)[0]];
+
+        //li.appendChild(span);
+
+        //ul.appendChild(li);
     }
 });
 

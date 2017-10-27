@@ -2,28 +2,48 @@
 @section OriginalStyle
 {
     <style type="text/css">
+        .mdl-data-table th {
+            color: rgba(59, 186, 236, 0.72);
+        }
     </style>
 }
-<h2>登録</h2>
-<section class="section--grey mdl-shadow--2dp contents">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="key">
-        <label class="mdl-textfield__label" for="key">Key</label>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Registration</h3>
+        <section class="section--grey mdl-shadow--2dp contents">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="key">
+                <label class="mdl-textfield__label" for="key">Key</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="value">
+                <label class="mdl-textfield__label" for="value">Value</label>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="registration">
+                登録
+            </button>
+        </section>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="value">
-        <label class="mdl-textfield__label" for="value">Value</label>
-    </div>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="registration">
-        登録
-    </button>
-</section>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>View</h3>
+        <section class="section--grey mdl-shadow--2dp contents">
+            <h4>「iot-hueテーブル」</h4>
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="view-table" style="margin-left:8px">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Key</th>
+                        <th class="mdl-data-table__cell--non-numeric">Value</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
 
-<h2>表示</h2>
-<section class="section--grey mdl-shadow--2dp contents">
-    <ul class="demo-list-item mdl-list" id="view-ul">
-    </ul>
-</section>
+            @*<ul class="demo-list-item mdl-list" id="view-ul"></ul>*@
+        </section>
+    </div>
+</div>
 
 
 @* 機能毎のスクリプトファイルを記載 *@
