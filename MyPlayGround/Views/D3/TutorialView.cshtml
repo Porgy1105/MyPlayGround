@@ -1,0 +1,26 @@
+﻿@using MyPlayGround.Models
+
+@* 機能毎のスタイルファイルを記載 *@
+@section OriginalStyle
+{
+    <style type="text/css">
+        div.bar {
+            display: inline-block;
+            width: 20px;
+            height: 75px; /* この数値は実行時に上書きされます */
+            background-color: teal;
+        }
+    </style>
+}
+<h2>D3 Sample</h2>
+<section class="section--grey mdl-shadow--2dp contents">
+    <h4>チュートリアル</h4>
+    <div id="tutorial"></div>
+</section>
+
+@* 機能毎のスクリプトファイルを記載 *@
+@section OriginalScript
+{
+    <script src="~/scripts/plugin/d3.js" type="text/javascript"></script>
+    <script src="~/scripts/d3-page.js" type="text/javascript"></script>
+}

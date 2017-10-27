@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -141,6 +142,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FirebaseController.cs" />
+    <Compile Include="Controllers\D3Controller.cs" />
     <Compile Include="Controllers\HandsontableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,8 +164,12 @@
     <None Include="Properties\PublishProfiles\rmMyPlayGround - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\rmPlayGround - Web Deploy.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="image\D3-logo.png" />
     <Content Include="image\handsontable-logo.png" />
     <Content Include="image\linq-logo.png" />
+    <Content Include="scripts\firebase-page.js" />
+    <Content Include="scripts\d3-page.js" />
+    <Content Include="scripts\plugin\d3.js" />
     <Content Include="scripts\utility.js" />
     <Content Include="scripts\handsontable-util.js" />
     <Content Include="scripts\handsontable-page.js" />
@@ -189,6 +196,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Handsontable\ReferenceView.cshtml" />
+    <Content Include="Views\D3\TutorialView.cshtml" />
+    <Content Include="Views\Firebase\DatabaseTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

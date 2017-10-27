@@ -1,7 +1,4 @@
-﻿
-
-
-let hot = new HotClass("hot");
+﻿let hot = new HotClass("hot");
 
 let columnData = setColumn();
 hot.updateSettings({
