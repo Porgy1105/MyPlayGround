@@ -18,10 +18,10 @@ firebase.database().ref("ifttt").on('value', function (snapshot) {
         if (value) {
             firebase.database().ref("google-home/" + datetimeText).set(value);
 
-            //setTimeout(function () {
-            //    // データ削除
-            //    firebase.database().ref("ifttt").set(null);
-            //}, 0)
+            setTimeout(function () {
+                // データ削除
+                firebase.database().ref("ifttt").set(null);
+            }, 0)
         }
     }
 
