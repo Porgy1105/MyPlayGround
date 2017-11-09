@@ -8,15 +8,24 @@
 };
 firebase.initializeApp(config);
 
-firebase.database().ref("googlehome").on('value', function (snapshot) {
+firebase.database().ref("ifttt").on('value', function (snapshot) {
     let date = new Date();
     let datetimeText = "" + date.getFullYear() + date.getMonth() + date.getDate() + date.getHours() + date.getMinutes() + date.getSeconds();
-    firebase.database().ref("google-home/" + datetimeText).set(snapshot.val());
-    
-    setTimeout(function () {
-        // データ削除
-        firebase.database().ref("googlehome").set(null);
-    },0)
+
+    let obj = snapshot.val();
+    if (obj) {
+        let value = obj.googlehome;
+        if (value) {
+            firebase.database().ref("google-home/" + datetimeText).set(value);
+
+            //setTimeout(function () {
+            //    // データ削除
+            //    firebase.database().ref("ifttt").set(null);
+            //}, 0)
+        }
+    }
+
+   
 });
 
 firebase.database().ref("google-home").on('value', function (snapshot) {
@@ -52,8 +61,6 @@ firebase.database().ref("iot-hue").on('value', function (snapshot) {
         let tdbody = table.getElementsByTagName("tbody")[0];
         tdbody.innerHTML = "";
 
-
-
         for (var i = 0, len = dataListKeys.length; i < len; i++) {
             let dataObj = dataList[dataListKeys[i]];
 
@@ -69,8 +76,6 @@ firebase.database().ref("iot-hue").on('value', function (snapshot) {
             tr.appendChild(tdValue);
 
             tdbody.appendChild(tr);
-
-
         }
     }
 });
