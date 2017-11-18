@@ -1,0 +1,64 @@
+﻿@* 機能毎のスタイルファイルを記載 *@
+@section OriginalStyle
+{
+    <style type="text/css">
+	    #errText{
+	        color:red;
+	    }
+    </style>
+}
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>GoogleHomeにしゃべらせることができるよ</h3>
+        <section class="section--grey mdl-shadow--2dp contents">
+            <section class="mdl-shadow--2dp contents" style="background-color: #e0e0e0">
+                <h4>しゃべらせたいテキストを入力してね</h4>
+            </section>
+            <section class="mdl-shadow--2dp contents">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:70%">
+                    <input class="mdl-textfield__input" type="text" id="talk-value">
+                    <label class="mdl-textfield__label" for="talk-value">テキスト</label>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="send">
+                    送信
+                </button>
+            </section>
+			<section class="mdl-shadow--2dp contents">
+				<span id="errText" ></span>
+            </section>
+        </section>
+    </div>
+</div>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <section class="section--grey mdl-shadow--2dp contents">
+            <section class="mdl-shadow--2dp contents" style="background-color: #e0e0e0">
+                <h4>現在のGoogleHomeNotifierのアドレス</h4>
+            </section>
+            <section class="mdl-shadow--2dp contents">
+                <ul class="demo-list-item mdl-list" id="address"></ul>
+            </section>
+            <section class="mdl-shadow--2dp contents" style="background-color: #e0e0e0">
+                <h4>アドレス更新フォーム</h4>
+            </section>
+            <section class="mdl-shadow--2dp contents">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:70%">
+                    <input class="mdl-textfield__input" type="text" id="address-value">
+                    <label class="mdl-textfield__label" for="address-value">アドレス</label>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="update">
+                    更新
+                </button>
+            </section>
+        </section>
+    </div>
+</div>
+
+@* 機能毎のスクリプトファイルを記載 *@
+@section OriginalScript
+{
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="~/scripts/googlehome-page.js" type="text/javascript"></script>
+}
